@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <title>গৌরবোজ্জ্বল ’৯৪ — বিলমাড়ীয়া উচ্চ বিদ্যালয়</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Bengali Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Bengali:wght@400;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            font-family: "Noto Sans Bengali", "SolaimanLipi", sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f9f4;
+            color: #222;
+            line-height: 1.7;
+        }
+
+        /* ================= HEADER ================= */
+        header {
+    height: 10vh;
+    min-height: 200px;
+    background-image: url("bk.png");
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: #000;
+    display: flex;
+    align-items: center;      /* vertical center */
+    justify-content: center;  /* horizontal center */
+}
+
+
+        .header-img {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+        .header-img.left { order: 1; }
+        .header-text { order: 2; }
+        .header-img.right { order: 3; }
+
+        .header-text {
+    text-align: center;
+}
+
+.header-text h1 {
+    margin: 0;
+    font-size: 70px;
+    font-weight: 700;
+    color: #ffffff;
+}
+
+.header-text p {
+    margin-top: 6px;
+    font-size: 30px;
+    opacity: 0.95;
+    color: #ffffff;
+}
+
+        /* ================= CONTENT ================= */
+        section {
+            max-width: 900px;
+            margin: auto;
+            padding: 20px;
+        }
+
+        h2 {
+            color: #2e7d32;
+            border-bottom: 2px solid #c8e6c9;
+            padding-bottom: 5px;
+        }
+
+        .box {
+            background: white;
+            padding: 18px 22px;
+            margin: 22px 0;
+            border-radius: 10px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        .kritoggata-serial {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            justify-content: center;
+        }
+
+        .kritoggata-serial img {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            object-fit: cover;
+            cursor: pointer;
+            transition: transform 0.3s;
+        }
+
+        .kritoggata-serial img:hover {
+            transform: scale(1.1);
+        }
+
+        footer {
+            text-align: center;
+            background: #e0f2f1;
+            padding: 15px;
+            font-size: 14px;
+            color: #333;
+        }
+
+        /* ================= BIO CONTAINERS ================= */
+        .bio-container-left,
+        .bio-container-right {
+            position: fixed;
+            top: 220px;
+            width: 400px; /* Increased width */
+            max-height: 70vh;
+            overflow-y: auto;
+            background-color: #f0f0f0;
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            display: none;
+            z-index: 1000;
+        }
+
+        .bio-container-left { left: 21px; }
+        .bio-container-right { right: 21px; }
+
+        .bio-container-left h3,
+        .bio-container-right h3 {
+            margin-top: 0;
+            color: #2e7d32;
+        }
+
+        .bio-container-left ul,
+        .bio-container-right ul {
+            padding-left: 50px;
+            margin: 5px 0 0 0;
+        }
+
+        /* Image styling for the top-right corner */
+        .bio-image {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            width: 80px; /* You can adjust the size as needed */
+            height: 80px; /* Keep the image square */
+            border-radius: 50%; /* Makes the image round */
+            object-fit: cover; /* Ensures the image covers the area without distortion */
+            border: 3px solid #fff; /* Optional: adds a white border around the image */
+            box-shadow: 0 0 5px rgba(0,0,0,0.3); /* Optional: adds a small shadow for effect */
+        }
+
+        /* ================= MOBILE ================= */
+	@media (max-width: 768px) {
+	    header { flex-direction: column; }
+	    .header-img { width: 60px; height: 60px; }
+	    .kritoggata-serial img { width: 60px; height: 60px; }
+	    
+	   
+
+	    /* Hide side bios on mobile */
+	    .bio-container-left,
+	    .bio-container-right { display: none; }
+
+	    /* Mobile bio just before footer */
+	    /* MOBILE BIO: match section width */
+		.bio-container-mobile {
+		    display: none; /* initially hidden */
+		    width: 100%;       /* full width */
+		    max-width: 900px;  /* same as main section */
+		    margin: 20px auto 40px auto; /* center it and give bottom spacing */
+		    background-color: #f0f0f0;
+		    padding: 20px;     /* match section padding */
+		    border-radius: 10px;
+		    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+		    position: relative; /* flow with content */
+		    box-sizing: border-box; /* ensure padding is included in width */
+		}
+
+
+	    /* Image inside bio */
+	    .bio-container-mobile .bio-image {
+		position: relative; /* inside container */
+		display: block;
+		margin: 0 auto 10px auto; /* centered above name */
+		width: 80px;
+		height: 80px;
+		border-radius: 50%;
+		object-fit: cover;
+		border: 3px solid #fff;
+		box-shadow: 0 0 5px rgba(0,0,0,0.3);
+	    }
+	}
+
+
+        /* ================= DESKTOP ================= */
+        @media (min-width: 769px) {
+            .bio-container-mobile { display: none; } /* Hide mobile bio on desktop */
+        }
+    </style>
+</head>
+
+<body>
+
+<!-- ================= HEADER ================= -->
+<header>
+<!-- =================    <img src="Onil.png" alt="Left" class="header-img left" /> ================= -->
+    <div class="header-text">
+        <h1>গৌরবোজ্জ্বল'৯৪</h1>
+        <p>বিলমাড়ীয়া উচ্চ বিদ্যালয়</p>
+    </div>
+<!-- =================    <img src="last.png" alt="Right" class="header-img right" /> ================= -->
+</header>
+
+<!-- ================= MAIN CONTENT ================= -->
+<section>
+    <div class="box">
+        <h2>আমাদের পরিচয়</h2>
+        <p>
+            <strong>গৌরবোজ্জ্বল'৯৪</strong> আমাদের স্কুলজীবনের
+            অমূল্য স্মৃতি, বন্ধুত্ব এবং একসাথে বেড়ে ওঠার গল্পের প্রতিচ্ছবি।
+            বিলমাড়ীয়া উচ্চ বিদ্যালয় আমাদের জীবনের ভিত্তি গড়ে দিয়েছে। শ্রেণিকক্ষ, মাঠ, পরীক্ষা, হাসি-কান্না—
+            প্রতিটি মুহূর্ত আজও আমাদের মনে জীবন্ত। সময় বদলায়, জীবন বদলায়—
+            কিন্তু বন্ধুত্ব থেকে যায় আজীবন।
+        </p>
+    </div>
+    <div class="box">
+        <h2>বন্ধুত্ব চিরদিন</h2>
+        <div class="kritoggata-serial">
+            <img src="mazder.png" alt="Mazder" onclick="showBio('Mazder', 'left', 'mazder.png')" />
+            <img src="mazder.png" alt="Mazder" onclick="showBio('Mazder', 'left', 'mazder.png')" />
+            <img src="mazder.png" alt="Mazder" onclick="showBio('Mazder', 'left', 'mazder.png')" />
+            <img src="mazder.png" alt="Mazder" onclick="showBio('Mazder', 'left', 'mazder.png')" />
+            <img src="mazder.png" alt="Mazder" onclick="showBio('Mazder', 'left', 'mazder.png')" />
+            <img src="mazder.png" alt="Mazder" onclick="showBio('Mazder', 'left', 'mazder.png')" />
+            <img src="mazder.png" alt="Mazder" onclick="showBio('Mazder', 'left', 'mazder.png')" />
+            <img src="mazder.png" alt="Mazder" onclick="showBio('Mazder', 'left', 'mazder.png')" />
+            <img src="mazder.png" alt="Mazder" onclick="showBio('Mazder', 'left', 'mazder.png')" />
+            <img src="mazder.png" alt="Mazder" onclick="showBio('Mazder', 'left', 'mazder.png')" />
+            <img src="mazder.png" alt="Mazder" onclick="showBio('Mazder', 'left', 'mazder.png')" />
+            <img src="mazder.png" alt="Mazder" onclick="showBio('Mazder', 'left', 'mazder.png')" />
+            <img src="mazder.png" alt="Mazder" onclick="showBio('Mazder', 'left', 'mazder.png')" />
+            <img src="mazder.png" alt="Mazder" onclick="showBio('Mazder', 'left', 'mazder.png')" />
+            <img src="mazder.png" alt="Mazder" onclick="showBio('Mazder', 'left', 'mazder.png')" />
+            <img src="mazder.png" alt="Mazder" onclick="showBio('Mazder', 'left', 'mazder.png')" />
+            <img src="mazder.png" alt="Mazder" onclick="showBio('Mazder', 'left', 'mazder.png')" />
+            <img src="mazder.png" alt="Mazder" onclick="showBio('Mazder', 'left', 'mazder.png')" />
+            <img src="mazder.png" alt="Mazder" onclick="showBio('Mazder', 'left', 'mazder.png')" />
+            <img src="mazder.png" alt="Mazder" onclick="showBio('Mazder', 'left', 'mazder.png')" />
+            <img src="mazder.png" alt="Mazder" onclick="showBio('Mazder', 'left', 'mazder.png')" />
+            <img src="mazder.png" alt="Mazder" onclick="showBio('Mazder', 'left', 'mazder.png')" />
+            <img src="mazder.png" alt="Mazder" onclick="showBio('Mazder', 'left', 'mazder.png')" />
+            <img src="mazder.png" alt="Mazder" onclick="showBio('Mazder', 'left', 'mazder.png')" />
+            <img src="mazder.png" alt="Mazder" onclick="showBio('Mazder', 'left', 'mazder.png')" />
+            <img src="mazder.png" alt="Mazder" onclick="showBio('Mazder', 'left', 'mazder.png')" />
+            <img src="mazder.png" alt="Mazder" onclick="showBio('Mazder', 'left', 'mazder.png')" />
+            <img src="mazder.png" alt="Mazder" onclick="showBio('Mazder', 'left', 'mazder.png')" />
+            <img src="mazder.png" alt="Mazder" onclick="showBio('Mazder', 'left', 'mazder.png')" />
+            <img src="mazder.png" alt="Mazder" onclick="showBio('Mazder', 'left', 'mazder.png')" />
+            <img src="mazder.png" alt="Mazder" onclick="showBio('Mazder', 'left', 'mazder.png')" />
+            <img src="mazder.png" alt="Mazder" onclick="showBio('Mazder', 'left', 'mazder.png')" />
+            <img src="mazder.png" alt="Mazder" onclick="showBio('Mazder', 'left', 'mazder.png')" />
+            <img src="mazder.png" alt="Mazder" onclick="showBio('Mazder', 'left', 'mazder.png')" />
+            <img src="mazder.png" alt="Mazder" onclick="showBio('Mazder', 'left', 'mazder.png')" />
+            <img src="mazder.png" alt="Mazder" onclick="showBio('Mazder', 'left', 'mazder.png')" />
+            <img src="mazder.png" alt="Mazder" onclick="showBio('Mazder', 'left', 'mazder.png')" />
+            <img src="mazder.png" alt="Mazder" onclick="showBio('Mazder', 'left', 'mazder.png')" />
+            <img src="mazder.png" alt="Mazder" onclick="showBio('Mazder', 'left', 'mazder.png')" />
+            <img src="mazder.png" alt="Mazder" onclick="showBio('Mazder', 'left', 'mazder.png')" />
+            <img src="mazder.png" alt="Mazder" onclick="showBio('Mazder', 'left', 'mazder.png')" />
+            <img src="mazder.png" alt="Mazder" onclick="showBio('Mazder', 'left', 'mazder.png')" />
+            <img src="mazder.png" alt="Mazder" onclick="showBio('Mazder', 'left', 'mazder.png')" />
+            <img src="mazder.png" alt="Mazder" onclick="showBio('Mazder', 'left', 'mazder.png')" />
+            <img src="mazder.png" alt="Mazder" onclick="showBio('Mazder', 'left', 'mazder.png')" />
+            <img src="mazder.png" alt="Mazder" onclick="showBio('Mazder', 'left', 'mazder.png')" />
+            <img src="mazder.png" alt="Mazder" onclick="showBio('Mazder', 'left', 'mazder.png')" />
+            <img src="mazder.png" alt="Mazder" onclick="showBio('Mazder', 'left', 'mazder.png')" />
+            <img src="mazder.png" alt="Mazder" onclick="showBio('Mazder', 'left', 'mazder.png')" />
+            <img src="mazder.png" alt="Mazder" onclick="showBio('Mazder', 'left', 'mazder.png')" />
+            <img src="mazder.png" alt="Mazder" onclick="showBio('Mazder', 'left', 'mazder.png')" />
+            <img src="mazder.png" alt="Mazder" onclick="showBio('Mazder', 'left', 'mazder.png')" />
+            <img src="mazder.png" alt="Mazder" onclick="showBio('Mazder', 'left', 'mazder.png')" />
+            <img src="mazder.png" alt="Mazder" onclick="showBio('Mazder', 'left', 'mazder.png')" />
+            <img src="mazder.png" alt="Mazder" onclick="showBio('Mazder', 'left', 'mazder.png')" />
+            <img src="mazder.png" alt="Mazder" onclick="showBio('Mazder', 'left', 'mazder.png')" />
+            <img src="mazder.png" alt="Mazder" onclick="showBio('Mazder', 'left', 'mazder.png')" />
+            <img src="mazder.png" alt="Mazder" onclick="showBio('Mazder', 'left', 'mazder.png')" />
+            <img src="mazder.png" alt="Mazder" onclick="showBio('Mazder', 'left', 'mazder.png')" />
+            <img src="mazder.png" alt="Mazder" onclick="showBio('Mazder', 'left', 'mazder.png')" />
+            <img src="mazder.png" alt="Mazder" onclick="showBio('Mazder', 'left', 'mazder.png')" />
+            <img src="mazder.png" alt="Mazder" onclick="showBio('Mazder', 'left', 'mazder.png')" />
+            <img src="mazder.png" alt="Mazder" onclick="showBio('Mazder', 'left', 'mazder.png')" />
+            <img src="mazder.png" alt="Mazder" onclick="showBio('Mazder', 'left', 'mazder.png')" />
+            <img src="mazder.png" alt="Mazder" onclick="showBio('Mazder', 'left', 'mazder.png')" />
+            <img src="mazder.png" alt="Mazder" onclick="showBio('Mazder', 'left', 'mazder.png')" />
+            <img src="mazder.png" alt="Mazder" onclick="showBio('Mazder', 'left', 'mazder.png')" />
+            <img src="mazder.png" alt="Mazder" onclick="showBio('Mazder', 'left', 'mazder.png')" />
+        </div>
+    </div>
+</section>
+
+<!-- Mobile bio: placed at the end of content -->
+<section>
+    <div id="bio-mobile" class="bio-container-mobile">
+        <img id="bio-image-mobile" src="" alt="Person Image" class="bio-image" />
+        <h2></h2>
+        <h3 id="bio-name-mobile"></h3>
+        <p id="bio-description-mobile"></p>
+        <ul id="achievements-list-mobile"></ul>
+    </div>
+</section>
+
+<!-- ================= FOOTER ================= -->
+<footer>
+    © ১৯৯৪–২০২৫ | গৌরবোজ্জ্বল'94 | বিলমাড়ীয়া উচ্চ বিদ্যালয়
+</footer>
+
+<!-- ================= BIO CONTAINERS ================= -->
+<!-- Desktop side bios -->
+<div id="bio-left" class="bio-container-left">
+    <img id="bio-image-left" src="" alt="Person Image" class="bio-image" />
+    <h2></h2>
+    <h3 id="bio-name-left"></h3>
+    <p id="bio-description-left"></p>
+    <ul id="achievements-list-left"></ul>
+</div>
+
+<div id="bio-right" class="bio-container-right">
+    <img id="bio-image-right" src="" alt="Person Image" class="bio-image" />
+    <h2></h2>
+    <h3 id="bio-name-right"></h3>
+    <p id="bio-description-right"></p>
+    <ul id="achievements-list-right"></ul>
+</div>
+
+<!-- ================= JS ================= -->
+<script>
+// Bio Data
+const bioData = {
+    'Mazder': {
+        name: 'মো: মাজদার রহমান',
+        description: 'এখানকার মাঠ-ঘাট, নদী-নালা, খাল-বিল, হাট-বাজার, সরু আকা-বাকা মেটো পথ, সবুজ ধানক্ষেত। ঋতুর সঙ্গে গ্রামের শোভা ও সাজ বদলায়। গ্রীষ্মে মাঠ ঝলমল, বর্ষায় চারপাশ সবুজ আর পানি থৈ থৈ, শরতে ধানক্ষেত সোনালী, হেমন্তে হালকা কুয়াশার নরম আলোয় শান্তিপূর্ণ, আর বসন্তে ফুলের রঙ ও বাতাসে মধুর সুবাস—সব মিলিয়ে এক স্নিগ্ধ প্রকৃতি।',
+        achievements: ['এ এক অনন্য ছাপ।', 'এ এক অনন্য ছাপ।']
+    }
+};
+
+function showBio(person, side = 'left', imageSrc) {
+    const bio = bioData[person];
+
+    // Check if it's mobile view
+    const isMobile = window.innerWidth <= 768;
+
+    if (isMobile) {
+    const mobileBio = document.getElementById('bio-mobile');
+    document.getElementById('bio-name-mobile').textContent = bio.name;
+    document.getElementById('bio-description-mobile').textContent = bio.description;
+
+    const mobileList = document.getElementById('achievements-list-mobile');
+    mobileList.innerHTML = '';
+    bio.achievements.forEach(a => {
+        const li = document.createElement('li');
+        li.textContent = a;
+        mobileList.appendChild(li);
+    });
+
+    document.getElementById('bio-image-mobile').src = imageSrc;
+    mobileBio.style.display = 'block';
+
+    // hide side bios
+    document.getElementById('bio-left').style.display = 'none';
+    document.getElementById('bio-right').style.display = 'none';
+}
+ else {
+        // Populate desktop bio
+        const containerId = side === 'left' ? 'bio-left' : 'bio-right';
+        const nameId = side === 'left' ? 'bio-name-left' : 'bio-name-right';
+        const descId = side === 'left' ? 'bio-description-left' : 'bio-description-right';
+        const listId = side === 'left' ? 'achievements-list-left' : 'achievements-list-right';
+        const imageId = side === 'left' ? 'bio-image-left' : 'bio-image-right';
+
+        document.getElementById(nameId).textContent = bio.name;
+        document.getElementById(descId).textContent = bio.description;
+
+        const list = document.getElementById(listId);
+        list.innerHTML = '';
+        bio.achievements.forEach(a => {
+            const li = document.createElement('li');
+            li.textContent = a;
+            list.appendChild(li);
+        });
+
+        document.getElementById(imageId).src = imageSrc;
+        document.getElementById(containerId).style.display = 'block';
+
+        // Hide mobile bio on desktop
+        document.getElementById('bio-mobile').style.display = 'none';
+    }
+}
+
+</script>
+
+</body>
+</html>
+
